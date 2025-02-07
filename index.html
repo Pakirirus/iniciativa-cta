@@ -34,7 +34,12 @@
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    if (username === "admin" && password === "1234") {
+    if (username === "cliente1" && password === "1234") {
+      alert("Login bem-sucedido!");
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('user', username); // Salvar o usuário atual
+      window.location.href = "home.html";
+    } else if (username === "veronica" && password === "101505") {
       alert("Login bem-sucedido!");
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('user', username); // Salvar o usuário atual

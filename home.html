@@ -21,9 +21,13 @@
 
       document.getElementById('user').innerText = user;
 
-      // Mostrar link apenas para o "admin"
-      if (user === 'admin') {
-        document.getElementById('admin-doc-link').style.display = 'block';
+      // Mostrar link apenas para o "cliente1"
+      if (user === 'cliente1') {
+        document.getElementById('demo').style.display = 'block';
+	document.getElementById('das').style.display = 'block';
+      }
+      if (user === 'veronica') {
+        document.getElementById('beronica').style.display = 'block';
       }
     };
 
@@ -36,7 +40,10 @@
 </head>
 <body>
   <h1>Bem-vindo, <span id="user"></span>!</h1>
-  <a id="admin-doc-link" href="admin-doc.html" style="display: none;">Acessar Documento Exclusivo</a>
+  <a id="demo" href="DEMONSTRATIVO.pdf" style="display: none;">Demonstrativo</a>
+  <br>
+  <a id="das" href="DAS-PGMEI-49916198000147-AC2025.pdf" style="display: none;">Guia DAS</a>
+  <a id="beronica" href="Cabeçalho (1).png" style="display: none;">Clique aqui</a>
   <br><br>
   <button onclick="logout()">Sair</button>
 </body>
