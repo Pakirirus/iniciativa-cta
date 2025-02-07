@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 400px;
+      margin: 50px auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      padding: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+  <script>
+  function login() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    if (username === "admin" && password === "1234") {
+      alert("Login bem-sucedido!");
+      localStorage.setItem('loggedIn', true);
+      localStorage.setItem('user', username); // Salvar o usuário atual
+      window.location.href = "home.html";
+    } else {
+      alert("Usuário ou senha incorretos!");
+    }
+  }
+</script>
+
+</head>
+<body>
+  <h1>Login</h1>
+  <form onsubmit="event.preventDefault(); login();">
+    <label for="username">Usuário:</label>
+    <input type="text" id="username" required>
+    <label for="password">Senha:</label>
+    <input type="password" id="password" required>
+    <button type="submit">Entrar</button>
+  </form>
+</body>
+</html>

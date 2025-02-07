@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      const user = localStorage.getItem('user');
+      if (!localStorage.getItem('loggedIn')) {
+        alert("Você precisa fazer login primeiro.");
+        window.location.href = "index.html";
+      }
+
+      document.getElementById('user').innerText = user;
+
+      // Mostrar link apenas para o "admin"
+      if (user === 'admin') {
+        document.getElementById('admin-doc-link').style.display = 'block';
+      }
+    };
+
+    function logout() {
+      localStorage.clear();
+      alert("Você saiu.");
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body>
+  <h1>Bem-vindo, <span id="user"></span>!</h1>
+  <a id="admin-doc-link" href="admin-doc.html" style="display: none;">Acessar Documento Exclusivo</a>
+  <br><br>
+  <button onclick="logout()">Sair</button>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documento Exclusivo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+  <script>
+    window.onload = function() {
+      const user = localStorage.getItem('user');
+      if (user !== 'admin') {
+        alert("Acesso negado! Somente o administrador pode acessar esta página.");
+        window.location.href = "home.html";
+      }
+    };
+  </script>
+</head>
+<body>
+  <h1>Documento Exclusivo para o Administrador</h1>
+  <p>Conteúdo importante e restrito.</p>
+  <a href="home.html">Voltar</a>
+</body>
+</html>
